@@ -31,11 +31,30 @@
         &lt;button type=&quot;button&quot; onclick=&quot;submitForm()&quot;&gt;Submit&lt;/button&gt;
     &lt;/form&gt;
 
-    &lt;script&gt;
+    <script>
         function submitForm() {
-            const emotionInput = document.getElementById(&#39;emotionInput&#39;).value;
+            // Get the emotion input value
+            const emotionInput = document.getElementById('emotionInput').value;
+
+            // Validate the input (add more validation as needed)
+            if (emotionInput >= 1 && emotionInput <= 5) {
+                // Assuming you have a function to load data based on the emotion
+                loadDataBasedOnEmotion(emotionInput);
+            } else {
+                alert('Please enter a valid feeling number between 1 and 5.');
+            }
         }
-    &lt;/script&gt;
+
+        // Example function to load data based on emotion
+        function loadDataBasedOnEmotion(emotion) {
+            // For simplicity, we'll just log the selected emotion to the console
+            console.log('Selected Emotion:', emotion);
+
+            // You can add logic here to load data dynamically based on the emotion
+            // For now, let's assume loadCloudData is a function in your animation.js file
+            loadCloudData();
+        }
+    </script>
 &lt;/body&gt;
 &lt;/html&gt;
 </tw-passagedata></tw-storydata>
